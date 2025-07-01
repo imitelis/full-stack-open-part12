@@ -1,5 +1,4 @@
 docker exec -it todo-backend-mongo-1 mongosh
-mongosh "mongodb://the_username:the_password@localhost:3456/the_database"
 use admin
 db.auth("root", "example")
 show dbs

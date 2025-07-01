@@ -6,4 +6,5 @@ Dockerfile
 dev.Dockerfile
 docker-compose.yml
 docker-compose.dev.yml
+build
 README.md

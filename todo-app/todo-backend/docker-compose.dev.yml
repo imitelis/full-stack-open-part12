@@ -18,7 +18,23 @@ services:
     command: ['redis-server', '--appendonly', 'yes']
     volumes:
      - redis_data:/data
+  server:
+    image: back-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3123:3000
+    container_name: back-dev
+    environment: 
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://root:example@mongo:27017/the_database?authSource=admin
 
-volumes:  
+  debug-helper:    
+    image: busybox
+
+volumes:
   mongo_data:
   redis_data:
