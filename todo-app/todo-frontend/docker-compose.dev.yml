@@ -11,5 +11,6 @@ services:
     container_name: front-dev # This will name the container front-dev
     environment: 
       - REACT_APP_BACKEND_URL=http://localhost:3123
+      
   debug-helper:    
     image: busybox

@@ -3,7 +3,7 @@ services:
     image: front
     build:
       context: ./todo-frontend
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     volumes:
       - ./todo-frontend/:/usr/src/app
     container_name: front
@@ -48,6 +48,9 @@ services:
     container_name: reverse-proxy
     depends_on:
       - app # wait for the frontend container to be started
+  
+  debug-helper:    
+    image: busybox
 
 volumes:
   mongo_data:
